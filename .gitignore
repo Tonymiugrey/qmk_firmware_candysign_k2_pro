@@ -104,7 +104,6 @@ __pycache__
 user_song_list.h
 
 # clangd
-compile_commands.json
 .clangd/
 .cache/
 
