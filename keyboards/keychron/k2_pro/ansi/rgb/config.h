@@ -16,6 +16,21 @@
 
 #pragma once
 
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+#    define TAPPING_TERM 175
+#    define TAPPING_TERM_PER_KEY
+#    define QUICK_TAP_TERM 100
+#    define TAPPING_TOGGLE 2
+#    define CAPS_WORD_INVERT_ON_SHIFT
+#    define LEADER_NO_TIMEOUT
+#    define LEADER_TIMEOUT 250
+#    define LEADER_PER_KEY_TIMING
+#    define MOUSEKEY_DELAY 6
+#    define MOUSEKEY_INTERVAL 16
+#    define MOUSEKEY_MAX_SPEED 6
+#    define MOUSEKEY_WHEEL_INTERVAL 120
+#    define DYNAMIC_KEYMAP_LAYER_COUNT 7
+
 #ifdef RGB_MATRIX_ENABLE
 /* RGB Matrix driver configuration */
 #    define DRIVER_COUNT 2
