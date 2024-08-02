@@ -1,6 +1,6 @@
 # Not official
 
-this is just a personal fork, I am an idiot and didn't properly fork the repo
+this is just a personal fork, I am an idiot and didn't properly fork the repo.
 ![here is the official repo](https://github.com/Keychron/qmk_firmware/tree/wireless_playground)
 
 # Quantum Mechanical Keyboard Firmware
