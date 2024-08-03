@@ -21,7 +21,7 @@
 #    define TAPPING_TERM_PER_KEY
 #    define QUICK_TAP_TERM 100
 #    define TAPPING_TOGGLE 2
-#    define CAPS_WORD_INVERT_ON_SHIFT
+// #    define CAPS_WORD_INVERT_ON_SHIFT
 #    define LEADER_NO_TIMEOUT
 #    define LEADER_TIMEOUT 250
 #    define LEADER_PER_KEY_TIMING
