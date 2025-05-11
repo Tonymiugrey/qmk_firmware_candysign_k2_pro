@@ -1,6 +1,6 @@
 # QMK for Candysign Keyboard Pro (Keychron K2 Pro)
 
-This is a personal build for Candysign Keyboard Pro, which is a variant of Keychron K2 Pro.
+This is a personal build for Candysign Keyboard Pro, which is a variant of Keychron K2 Pro. Only has white led and ansi layout.
 
 ## Globe(fn) Supports on macOS
 
