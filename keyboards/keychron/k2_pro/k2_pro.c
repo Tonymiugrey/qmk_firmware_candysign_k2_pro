@@ -73,8 +73,23 @@ bool process_record_kb_bt(uint16_t keycode, keyrecord_t *record) {
 bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 #endif
     static uint8_t host_idx = 0;
+    static uint16_t globe_timer;
 
     switch (keycode) {
+        case KC_MCTRL:
+            if (record->event.pressed) {
+                register_code(KC_MISSION_CONTROL);
+            } else {
+                unregister_code(KC_MISSION_CONTROL);
+            }
+            return false; // Skip all further processing of this key
+        case KC_LNPAD:
+            if (record->event.pressed) {
+                register_code(KC_LAUNCHPAD);
+            } else {
+                unregister_code(KC_LAUNCHPAD);
+            }
+            return false; // Skip all further processing of this key
         case KC_LOPTN:
         case KC_ROPTN:
         case KC_LCMMD:
@@ -85,6 +100,20 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 unregister_code(mac_keycode[keycode - KC_LOPTN]);
             }
             return false; // Skip all further processing of this key)
+        case KC_APFN:
+            if (record->event.pressed) {
+                globe_timer = timer_read();
+                layer_on(1);  // 启用 Layer 1
+            } else {
+                if (timer_elapsed(globe_timer) < TAPPING_TERM) {
+                    // TAP：发送 Apple 输入法切换键（0x29D）
+                    host_consumer_send(0x29D);
+                    wait_ms(10);
+                    host_consumer_send(0);
+                }
+                layer_off(1); // 松开时退出 Layer 1（无论 tap/hold）
+            }
+            return false; // 阻止默认 MO() 行为（我们已手动处理 Layer）
         case KC_TASK:
         case KC_FILE:
         case KC_SNAP:
