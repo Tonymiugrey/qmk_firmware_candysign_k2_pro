@@ -37,6 +37,7 @@ enum {
     KC_RCMMD,
     KC_MCTRL,
     KC_LNPAD,
+    KC_HYFN,
     KC_APFN,
     KC_TASK,
     KC_FILE,
